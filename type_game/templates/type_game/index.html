@@ -1,0 +1,71 @@
+{% extends "type_game/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="wrapper">
+        <input type="text" class="input-field">
+        <div class="content-box ">
+            <div class="typing-text">
+                <p></p>
+                <p style="display: none;" class="random_content">{{content.type_content}}</p>
+            </div>
+            <div class="content" >
+                <ul class="result-details">
+                    <li class="time">
+                        <p>Time:</p>
+                        <a href="#" id="timer60s" onclick="click_time(60)">
+                            <span><b>60</b>s</span>
+                        </a>
+                        <a href="#" id="timer30s" onclick="click_time(30)" >
+                            <span><b>30</b>s</span>
+                        </a>
+                        <a href="#" id="timer15s" onclick="click_time(15)"> 
+                            <span><b>15</b>s</span>
+                        </a>
+                    </li>
+                    <li class="miss">
+                        <p>Mistakes:</p>
+                        <span>0</span>
+                    </li>
+                    <li class="wpm">
+                        <p>WPM:</p>
+                        <span>0</span>
+                    </li>
+                    <li class="cpm">
+                        <p>CPM:</p>
+                        <span>0</span>
+                    </li>
+                </ul>
+                <form action="{% url 'reset' %}" method="get" class="restart-btn">
+                    <button class="btn btn-secondary start-btn">Restart</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="endtyping_result">
+        <ul class="showresult">
+            <li class="barline_result">
+                <p class="result_size">Mistakes:</p>
+                <span class="result_size miss1">0</span>
+            </li>
+            <li class="barline_result">
+                <p class="result_size">WPM:</p>
+                <span class="result_size wpm1">0</span>
+            </li>
+            <li class="barline_result">
+                <p class="result_size">CPM:</p>
+                <span class="result_size cpm1">0</span>
+            </li>
+        </ul>
+    </div>
+    <form action="{% url 'reset' %}" method="get" class="form-btn">
+        <button class="btn btn-secondary start-btn">Restart</button>
+    </form>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'type_game/type.js' %}"></script>
+{% endblock %}
