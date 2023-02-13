@@ -470,5 +470,4 @@ function click_time(time) {
 
 Running for this project is no different from any other `django` project. 
 
-The user only need to typing in `python manage.py runserver` in the terminal. However, do in mind that you have to inside the directory of this project which is called `final_project`.
-
+The user only need to typing in `python manage.py runserver` in the terminal. However, do in mind that you have to inside the directory of this project which is called `final_project`
